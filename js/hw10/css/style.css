@@ -1,0 +1,160 @@
+/*menu & submenu*/
+
+menu{
+  background-color: #EAC19C;
+}
+
+menu:after{
+  content:"";
+  display: block;
+  clear: both;
+}
+
+.menu ul li{
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  background-color: #EAC19C;
+}
+
+menu li a{
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  top: 100%;
+  width: 200%;
+  z-index: 1;
+}
+
+.submenu>li{
+  width: 80px;
+}
+
+.subsubmenu{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  width: 250%;
+}
+
+.subsubmenu li{
+  width: 115px;
+}
+
+.subsubmenu2{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 135px;
+  width: 100%;
+}
+
+/*carousel*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: outside none none;
+}
+
+.jcarousel li {
+  float: left;
+  height: 400px;
+  width: 600px;
+  display: none;
+}
+
+.jcarousel .active{
+  display: block;
+}
+
+/*checkbox with jQuery*/
+
+.checkbox{
+  margin: 50px;
+  padding: 5px;
+  background-color: #FBF7EE;
+  border-radius: 5px;
+  border: 1px solid #D49864;
+}
+
+.checkbox label {
+  margin: 0px 5px;
+}
+
+.checkbox span{
+  display: block;
+}
+
+.checkbox .niceCheck{
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  cursor: pointer;
+  background: url(../img/checkbox.png);
+  overflow: hidden;
+	}
+
+	.checkbox .niceChecked {
+	 background-position: 0 -17px;
+	}
+
+	.checkbox .niceCheck input {
+	 margin-left: -100px; 
+	}
+
+	.checkbox .niceCheckDisabled {
+	    background-image: url(../img/checkbox.png);
+      opacity: 0.5;
+	}
+
+/*checkbox with css*/
+
+.checkboxCSS{
+  margin-top: 15px; 
+}
+
+.checkboxCSS input[type=checkbox] {
+   position: absolute;
+   clip: rect(0, 0, 0, 0);
+}
+
+.checkboxCSS  label {
+   cursor: pointer;
+}
+
+.checkboxCSS label:after {
+   content: " ";
+   display: inline-block;
+   width: 17px;
+   height: 17px;
+   background: url(../img/checkbox-2.png);
+   position: relative;
+   top: 3px;
+   margin-left: 15px;
+}
+
+.checkboxCSS input[type=checkbox]:checked + label:after {
+background-position: 0 -17px;
+}
+
+.checkboxCSS label:hover:after {
+background-position: 0 -34px;
+}
+
+.checkboxCSS input[type=checkbox]:checked + label:hover:after {
+background-position: 0 -51px;
+}

@@ -1,0 +1,107 @@
+/*carousel's style*/
+.carousel{
+  width: 1077px;
+  padding: 20px 10px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-hider{
+  width: 940px;
+  overflow: hidden;
+  float: left;
+}
+
+.carousel-list{
+  list-style: none;
+  width: 10000px;
+  padding: 0px;
+  position: relative;
+}
+
+.carousel-element{
+  display:block;
+  margin-right: 20px;
+  float:left;
+}
+
+.carousel-element img{
+  max-width: 300px;
+}
+
+.carousel-arrow-left, .carousel-arrow-right{
+  float:left;
+  display: block;
+  border: 1px solid lightgrey;
+  background-color: #fff;
+  padding: 5px;
+  margin-top: 77px;
+  border-radius: 5px;
+  color: grey;
+}
+
+.carousel-arrow-left:hover, .carousel-arrow-right:hover{
+  cursor: pointer;
+  background-color: lightgrey;
+  color: black;
+}
+
+.carousel-arrow-left{
+  margin-right: 25px;
+}
+
+.carousel-arrow-right{
+  margin-left: 25px;
+}
+
+.red{
+  color: red;
+  border-color: red;
+}
+
+ /*template styles*/
+ .template{
+   width: 800px;
+   padding: 20px 143.5px;
+   margin: 0 auto;
+   border-top: 1px solid lightgrey;
+ }
+.template:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1{
+  padding: 10px;
+   font-family: cursive;
+   font-size: 76px;
+   text-align: center;
+   color: grey;
+ }
+
+ h4{
+   font-family: cursive;
+   font-size: 40px;
+   color: grey;
+   line-height: 60px;
+ }
+
+ h2{
+   text-align: right;
+   color: grey;
+   margin-bottom: 100px;
+ }
+
+ .section{
+   border-top: 1px solid lightgrey;
+   margin-top: 20px;
+ }
+
+ p, li{
+   font-family: cursive;
+   font-size: 32px;
+   color: lightgrey;
+   line-height: 56px;
+ }

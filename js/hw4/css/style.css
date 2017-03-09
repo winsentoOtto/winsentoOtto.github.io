@@ -1,0 +1,42 @@
+body{
+  background-color: #EFEFEF;
+  margin: 40px;
+}
+
+label{
+  display: block;
+}
+
+input{
+  display: inline-block;;
+}
+
+p{
+  display: inline-block;
+}
+
+li{
+  margin: 20px;
+}
+
+.wrapper{
+  background-color: white;
+ 	width:760px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	border: 1px solid black;
+}
+
+.title{
+text-align: center;
+padding-top: 20px;
+}
+
+button{
+  display: block;
+  background-color: #D0DFF1;
+  margin: 40px auto;
+  padding: 10px 40px;
+  border: 2px solid black;
+  cursor: pointer;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw9-10</title>
+    <!-- css styles -->
+    <link rel="stylesheet" href="css/reset.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="all" href="css/jquery.selectbox.css" />
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/jcarousel.transitions.css" media="screen" charset="utf-8">
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-1.7.js"></script>
+    <script type="text/javascript" src="js/jquery.carousel.js"></script>
+    <script type="text/javascript" src="js/jquery.selectbox-0.6.1.js"></script>
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/checkbox.js"></script>
+  </head>
+  <body>
+    <menu class="menu">
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">What are we doing</a></li>
+        <li><a href="#">Our team</a>
+          <ul class="submenu">
+            <li><a href="#">Team leads</a></li>
+            <li><a href="#">Designers</a>
+              <ul class="subsubmenu">
+                <li><a href="">Jack Jack</a></li>
+                <li><a href="">Daniel Danielson</a>
+                  <ul class="subsubmenu2">
+                    <li><a href="">Expirience</a></li>
+                    <li><a href="">Works</a></li>
+                    <li><a href="">Goals</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Developers</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Our partners</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </menu>
+    <!--carousel-->
+    <div class="jcarousel-wrapper">
+      <div class="jcarousel" data-jcarousel="true">
+        <ul>
+          <li class="active"><img src="img/1.jpg" alt="картинка 1"></li>
+          <li><img src="img/2.jpg" alt="картинка 2"></li>
+          <li><img src="img/3.jpg" alt="картинка 3"></li>
+          <li><img src="img/4.jpg" alt="картинка 4"></li>
+          <li><img src="img/5.jpg" alt="картинка 5"></li>
+        </ul>
+      </div>
+      <a class="jcarousel-control-prev" href="#" data-jcarouselcontrol="true">‹</a>
+      <a class="jcarousel-control-next" href="#" data-jcarouselcontrol="true">›</a>
+    </div>
+    <!--selectbox-->
+    <div class="checkbox">
+    <div class="select">
+      <select id="usage-select">
+        <option value="--">Please select your favorite color</option>
+        <option value="01">Red</option>
+        <option value="02">Orange</option>
+        <option value="03">Yellow</option>
+        <option value="04">Green</option>
+        <option value="05">Blue</option>
+        <option value="06">Magenta</option>
+        <option value="07">Violet</option>
+        <option value="08">Ultra-violet</option>
+      </select>
+    </div>
+    <div class="checkboxJQ">
+      <p>Checkbox with jQuery</p>
+      <form action="#">
+        <div><label for="ch1">label 1</label><input type="checkbox" class="niceCheck" id="ch1" tabindex="1"></div>
+	      <div><label for="ch2">label 2</label><input type="checkbox" class="niceCheck" checked="checked" id="ch2" tabindex="2" value="2"></div>
+        <div><label for="ch3">label 3</label><input type="checkbox" class="niceCheck" id="ch3" checked="checked" disabled="disabled"></div>
+      </form>
+      </div>
+      <div class="checkboxCSS">
+      <p>Checkbox with css</p>
+      <form action="#">
+        <input type="checkbox" id="test-check1">
+        <label for="test-check1">label</label>
+      </form>
+    </div>
+    </div>
+  </body>
+  </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
+    <script src="js/template.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Template -->
+      <h1>Test</h1>
+      <main class="template">
+        <script type="text/template" id="profile">
+          <% for (var k = 0; k < data.length; k++)  { %>
+          <div class="section">
+            <h4><%= k + 1 + '. ' + data[k].question %></h4>
+            <div class="options">
+              <% for (var i = 0; i < data[k].options.length; i++) { %>
+                <label><input type="radio" class="checkbox" value="<%= i+1 %>" name="<%= k %>"><%= i + 1 + '. ' + data[k].options[i] %></  input></label>
+                <% }; %>
+              </div>
+            </div>
+          <p class="correct"><%= data[k].correct %></p>
+        <% }; %>
+      </script>
+    </main>
+    <form class="" action="index.html"   method="post">
+      <input type="button" name="name" value="Check" id="check">
+    </form>
+  </div>
+  </body>
+</html>

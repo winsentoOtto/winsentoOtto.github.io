@@ -1,0 +1,87 @@
+.wrapper{
+	max-width: 740px;
+	margin: 50px auto;
+	background-color: #B57419;
+	padding-bottom: 5px;
+	border-radius: 5px;
+}
+
+.tabs li{
+	float: left;
+	padding: 5px;
+	margin: 10px 0px 0px 10px;
+	background-color: #88510E
+}
+
+.tabs li:first-child{
+	border-radius: 5px 0 0 0;
+}
+
+.tabs li:last-child{
+	border-radius: 0 5px 0 0;
+}
+
+.tabs:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.tabs, .content{
+	display: block;
+}
+
+.tabs{
+	background-color: #563309;
+	border-radius: 5px;
+}
+
+.tabs .active{
+	background-color: #fff;
+	font-family:sans-serif;
+}
+
+.content{
+	margin: 0px 10px 10px 10px;
+	padding: 5px;
+	background-color: #fff;
+}
+
+.content p{
+	display:none;
+}
+
+.content .box{
+	display: block;
+}
+
+.fieldWrapper{
+	width: 740px;
+	margin: 30px auto;
+	border: 3px solid #563309;
+	border-radius: 5px;
+	background-color: #B57419;
+}
+
+.fieldWrapper input{
+	margin: 10px;
+}
+
+.fieldWrapper label{
+	margin: 10px;
+	color: #fff;
+}
+
+input{
+	border: 1px solid #563309;
+}
+
+.hover{
+	border: 1px solid blue;
+}
+
+fieldset p{
+	display: inline-block;
+	color: #fff;
+	opacity: 0;
+}

@@ -1,0 +1,43 @@
+h1{
+	font-family: cursive;
+	font-style: italic;
+	font-size: 100px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #4285F4;
+}
+
+input{
+	line-height: 22px;
+}
+
+button{
+	line-height: 22px;
+	margin: 5px;
+}
+
+img{
+	height: 100px;
+	margin: 5px;
+}
+
+.wrapper{
+	width: 500px;
+	margin: 50px auto;
+}
+
+.search{
+	text-align: center;
+}
+
+.red{
+	color: #EA4335;
+}
+
+.yellow{
+	color: #FBBC05;
+}
+
+.green{
+	color: #34A853;
+}

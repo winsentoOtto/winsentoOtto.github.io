@@ -1,0 +1,21 @@
+.output{
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+#startBut, #splitBut, #resetBut {
+  width: 32%;
+}
+
+#clock{
+  width: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  border: none;
+}
+
+#data{
+  display: block;
+  margin: 10px auto;
+  text-align: center;;
+}
