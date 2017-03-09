@@ -1,0 +1,237 @@
+body{
+	background: url('../images/bg.jpg') repeat-x;
+}
+
+.wrapper{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 7px 3px rgba(0,0,0,0.5);
+	margin-bottom: 10px;
+}
+
+.header{
+background: white;
+clear: both;
+}
+	.header:after{
+		content:"";
+		display: block;
+		clear: both;
+	}
+
+.logo{
+	background: url('../images/logo.jpg') no-repeat;
+	display: block;
+	float: left;
+	min-width: 286px;
+	height: 175px;
+	margin-left: 30px;
+}
+
+.logo:after{
+	content:"";
+	display: block;
+	clear: both;
+}
+
+.logo p{
+	color:#128AA7;
+	margin-top: 115px;
+	margin-left: 40px;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.wrapper_head{
+	float: right;
+	display: block;
+}
+	.wrapper_head:after{
+	content:"";
+	display: block;
+	clear: both;
+}
+
+.contacts{
+	display: block;
+	float: right;
+	color: #41A1B9;
+	margin: 10px 30px;
+	font-size: 14px;
+}
+
+.cont{
+	font-weight: bold;
+}
+
+.countries{
+	display: block;
+	margin-right: 19px;
+	margin-top: 10px;
+	float: right;
+	clear: both;
+}
+	.countries:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+.flags li{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	vertical-align: top;
+}
+
+	.flags .sri-lanka {
+		margin-left: 0px;
+	}
+
+	.names{
+		font-size: 11px;
+		display: inline-block;
+		color: #41A1B9;
+		text-decoration: underline;
+	}
+
+.image{
+	margin-left: auto;
+	margin-right: auto;
+	height: 235px;
+	border-bottom: 1px solid #407C87;
+}
+
+.image:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*menu*/
+.menu{
+	background-color: #313131;
+	box-shadow: 0 3px 5px rgba(0,0,0,1);
+	border-top: 1px solid white;
+	border-bottom: 1px solid black;
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+
+	
+	.menu:after{
+		content:"";
+		display: block;
+		clear: both;
+	}
+
+.menu li{
+	position: relative;
+	z-index: 2;
+	float:left;
+	
+}
+
+.menu li a{
+	display: block;
+	padding: 5px 30px;
+	color: #fff;
+	background-color: #313131;
+}
+
+.submenu{
+	display: none;
+	position: absolute;
+	top: 27px;
+	left: 0;
+	top: 100%;
+	width: 100%;
+}
+
+.trip:hover .submenu{
+	display: block;
+}
+
+.trip>a:after{
+	content:"\f0dd";
+    font-family: "FontAwesome";
+    vertical-align: center;
+    margin: 0px 5px;
+}
+
+.services>a:after{
+	content:"\f0dd";
+    font-family: "FontAwesome";
+    vertical-align: center;
+    margin: 0px 5px;
+}
+
+.for_partners>a:after{
+	content:"\f0dd";
+    font-family: "FontAwesome";
+    vertical-align: center;
+    margin: 0px 5px;
+}
+
+/*columns*/
+
+.content{
+	width: 1000px;
+	overflow: hidden;
+}
+	.content:after{
+		width: 100%;
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+
+h2{
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 2;
+}
+
+.leftColumn {
+	width: 200px;
+	float: left;
+	background: #EDEEF0;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+.leftColumn p, .rightColumn p{
+	padding: 0px 10px 10px 10px; 
+}
+
+.centerColumn {
+	width: 598px;
+	float: left;
+	background: #FFFFFF;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+	border-left: 1px solid #CACDD1;
+	border-right: 1px solid #CACDD1;
+}
+
+.rightColumn {
+	width: 200px;
+	float: right;
+	background: #EDEEF0;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+/* copyrights */
+.copyrights{
+	color: white;
+	display: block;
+	font-family: sans-serif;
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 10px;
+}

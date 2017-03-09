@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Helvetica Neue Cyrlight';
+    src: url('helveticaneuecyr-light-webfont.eot');
+    src: url('helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneuecyr-light-webfont.woff2') format('woff2'),
+         url('helveticaneuecyr-light-webfont.woff') format('woff'),
+         url('helveticaneuecyr-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	background: url('../images/bg.jpg') no-repeat top center;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	display: block;
+	text-align: center;
+}
+
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+a{
+	font-family: "Helvetica Neue Cyrlight";
+}
+
+.navbar{
+	background: url('../images/navbar_bg.jpg') repeat-x;
+	background-color: #085392;
+	line-height: 25px;
+}
+
+.menu, .choise{
+	float: right;
+	position: relative;
+	font-size: 16px;
+}
+
+.menu li a, .choise li{
+	padding: 5px 10px;
+	display:block;
+}
+
+.navbar li{
+	float: left;
+	position: relative;
+	font-family: "Helvetica Neue";
+	color: #60b5ed;
+	background: url('../images/navbar_bg.jpg') repeat-x;
+	background-color: #085392;
+	font-size: 16px;
+}
+
+.choise li{
+	color: white;
+}
+
+.menu li:hover{
+	background: none;
+	background-color: #4eabda;
+	color: white;
+}
+
+.choise{
+	margin-right: 20px;
+}
+
+.menu li:last-child{
+	border-right: 1px solid #60b5ed;
+}
+
+.choise li:first-child:before{
+	content: "\f024";
+	font-family: "FontAwesome";
+    vertical-align: center;
+    margin: 0px 5px;
+}
+
+.choise .light{
+	background: none;
+	background: linear-gradient(to bottom, #51b1dc, #2e7ac4 );
+}
+.light a {
+	text-decoration: underline;
+}
+/*form*/
+
+.form{
+	display: block;
+	margin: 129px auto;
+	text-align: center;
+	width: 500px;
+	background-color: rgba(0,0,0,0.5);
+	font-family: "Helvetica Neue", Tahoma;
+	padding-bottom: 20px;
+}
+
+.content .form .wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px;
+}
+
+.input, .checkbox, .submit{
+	margin: 10px;
+}
+
+h1{
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+	padding: 20px;
+	border-bottom: 1px solid white;
+}
+
+.btnFacebook {
+ display: inline-block;
+ background: -webkit-linear-gradient(top, #28539B, #193F7B); /*для webkit-браузеров*/
+ background: -moz-linear-gradient(top, #28539B, #193F7B); /*для firefox 3.6+*/
+ background: -o-linear-gradient(top, #28539B, #193F7B); /*для Opera 11.10+*/
+ background: -ms-linear-gradient(top, #28539B, #193F7B); /*для IE10+*/
+ background: linear-gradient(to bottom, #28539B, #193F7B);
+ border-radius: 5px;
+ position: relative;
+ color: #fff;
+ text-decoration: none;
+ margin: 10px;
+ font-size: 14px;
+}
+
+.btnFacebook p {
+ display: inline-block;
+ vertical-align: middle;
+ padding: 0 30px;
+ color: #fff;
+ font-family: "Helvetica Neue", Tahoma;
+}
+
+b{
+	font-weight: bold;
+}
+
+.btnFacebook:before {
+ content: "f";
+ display: inline-block;
+ vertical-align: middle;
+ font-size: 20px;
+ font-weight: bold;
+ border-right: 2px groove #ccc;
+ padding: 5px 10px;
+ color: #fff;
+ font-family: "Helvetica Neue", Tahoma;
+}
+
+.btnFacebook:after {
+ content: "\f105";
+ font-family: "FontAwesome";
+ position: absolute;
+ right: 15px;
+ top: 8px;
+ color: #fff;
+ display: block;
+ text-align: center;
+}
+
+.line {
+  color: #999999;
+  font-size: 14px;
+}
+
+.line p:after {
+  display: inline-block;
+  margin-bottom: 4px;
+  content: " ";
+  width: 105px;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #000000;
+}
+
+.line p:before {
+  display: inline-block;
+  margin-bottom: 4px;
+  content: " ";
+  width: 105px;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #000000;
+}
+
+.line p{
+	margin: 10px 0px 20px 0px;
+}
+
+.fields input{
+  background: #111111;
+  width: 220px;
+  height: 25px;
+  padding: 5px 10px;
+  color: #7f7f7f;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-bottom: 1px solid #4a4a49;
+}
+
+.fields input:focus {
+  background: #1b5288;
+  box-shadow: 0px 0px 20px #1b5288;
+  border: 1px solid #4b86ae;
+  color: #fffcfc;
+}
+
+.checkbox {
+  margin: 10px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  margin: 10px 0px 5px 0px;
+  border-radius: 3px;
+  border: 0px;
+  border-top: 2px solid #67c6e6;
+  background: linear-gradient(to bottom, #4eabda, #2e7ac4);
+  font-size: 14px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.form div span{
+  font-size: 14px;
+  color: #cccccc;
+  padding-bottom: 20px;
+}
+.form .terms span{
+	font-size: 11px;
+}
+

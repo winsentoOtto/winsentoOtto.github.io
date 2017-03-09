@@ -1,0 +1,144 @@
+
+body{
+	background-color: #F9F9F9;
+	line-height: 1;
+}
+
+.wrapper{
+	width: 966px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	padding: 30px 70px 30px 70px;
+}
+
+h1{
+	font-size: 36px;
+	font-family: Arial;
+	margin: 50px 0px 40px 0px;
+}
+
+.menu_top{
+	background-color: #5e5e5e;
+}
+
+.menu_top li{
+	font-family: Arial;
+	font-size: 15px;
+	display: inline-block;
+	color: white;
+	margin: 0px 1px;
+}
+
+.menu_top li a{
+	display: block;
+	line-height: 40px;
+	padding: 0px 20px;
+}
+
+.menu_top li:hover{
+	margin: 0px;
+	background-color: #333333;
+	border-left: 1px solid #838383;
+	border-right: 1px solid #838383;
+}
+
+.wrapper_content{
+	width:966px;
+}
+
+
+.wrapper_content:after { 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; 
+} 
+
+
+.sidebar{
+	margin-top: 40px;
+	width: 240px;
+	display: inline-block;
+	float: left;
+	clear:both;
+}
+
+.sidebar li{
+	font-family: Arial;
+	font-size: 13px;
+	display: block;
+	color: #7F7D7D;
+	border: 1px solid #c8c8c8;
+	border-bottom: none;
+}
+
+.sidebar li:last-child{
+	border-bottom: 1px solid #c8c8c8;
+}
+
+.sidebar li a{
+	padding: 13px 20px;
+	display: block;
+}
+
+.sidebar li a:hover{
+	padding-left: 30px;
+	background: #CCC;
+}
+
+.content{
+	width: 678px;
+	float: right;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+
+.bike{
+	height: 400px;
+	width: 678px;
+	margin-bottom:40px;
+	display: inline-block;	
+	background-image: url('../images/bike.jpg');
+}
+
+.sometext{
+	width: 678px;
+	float:right;
+	color: #2C2C2C;
+}
+
+.footer{
+	display: block;
+	background-color: #E1E1E1;
+	margin-bottom: 60px;
+	clear: both;
+	padding: 22px 0px 35px 0px;
+}
+
+.footer ul{
+	float: left;
+	vertical-align: center;
+}
+
+.footer li{
+	font-family: Arial;
+	font-size: 15px;
+	display: inline-block;
+	color: #2C2C2C;
+	padding: 0px 20px;
+}
+
+.footer li a:hover{
+	text-decoration: underline;
+}
+
+.copyrights{
+	float: right;
+	color: #2C2C2C;
+	display: block;
+	margin-right: 20px; 
+}

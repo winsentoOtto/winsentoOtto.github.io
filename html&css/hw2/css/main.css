@@ -1,0 +1,51 @@
+body{
+	background: #EFEFEF;
+}
+
+div{
+	display: block;
+}
+
+p{
+	margin-left: 10px;
+}
+
+.general,
+.aim,
+.contacts{
+	border-bottom: 1px solid #A4A4A4; 
+}
+
+.page{
+	background: #FFFFFF;
+	width:660px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	padding: 0px 0px 30px 0px;
+}
+
+.content{
+	background: #FFFFFF;
+	width:460px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 18px;
+	line-height: 1.5;
+	color: black;
+}
+
+.name{
+	text-align: center;
+	font-size: 32px;
+	color: black;
+	line-height: 4;
+}
+
+.photo{
+	background: url('../images/foto.jpg') no-repeat;
+	width:146px;
+	height: 160px;
+	margin-left: auto;
+	margin-right: auto;
+}
