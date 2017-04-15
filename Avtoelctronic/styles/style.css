@@ -1,0 +1,69 @@
+body{
+  padding-bottom: 0;
+}
+
+.navbar .navbar-brand{
+  color: yellow;
+}
+
+/*carousel styles*/
+#myCarousel h3{
+  font-size: 28px;
+  color: #F9FF9A;
+}
+@media(min-width:500px){
+  #myCarousel h3{
+    font-size: 46px;
+  }
+}
+
+#myCarousel .carousel-caption{
+  top: 36%;
+}
+
+#myCarousel .item img{
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+}
+
+.section-name{
+  font-size: 30px;
+  text-align: center;
+  background-color: #ccc;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  margin: 40px 0;
+  color: #fff;
+}
+
+/*advantages*/
+.advantages .advantages__item{
+  text-align: center;
+}
+
+/*services list*/
+.divider{
+  margin: 80px 0;
+}
+
+/*contacts*/
+#contacts{
+  text-align: center;
+}
+
+.phone:before{
+  content: "\f098";
+  font-family: "FontAwesome";
+  margin-right: 15px;
+}
+
+/*footer*/
+footer{
+  background-color: #222;
+}
+
+footer p{
+  margin: 10px 0;
+  /*min-width: 290px;*/
+}
