@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sixt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dest/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="dest/style.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__logo"></div>
+        <div class="header__content">
+          <ul class="header__events">
+            <li><a href="#">LKW VERMIETUNG</a></li>
+            <li><a href="#">LOGIN <img src="images/login_icon.png" alt="login_image"></a></li>
+          </ul>
+          <nav class="header__nav">
+            <a href="#">MENÜ</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="hero">
+      <div class="hero__carousel">
+        <ul>
+          <li><a class="slide slide1 active" href="#"></a></li>
+          <li><a class="slide slide2" href="#"></a></li>
+          <li><a class="slide slide3" href="#"></a></li>
+        </ul>
+        <div class="controls control__left">&#60;</div>
+        <div class="controls control__right">&#62;</div>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <form class="hero__form" action="" method="post">
+            <fieldset>
+              <p class="clearfix">
+                <label for="location">ABHOLUNG & RÜCKGABE</label>
+                <span class="edit_location">Rückagabe ändern</span>
+                <input type="text" name="location" placeholder="Faro Flughafen">
+              </p>
+
+              <p class="dates start_date clearfix">
+                <label for="date_from">ABHOLZEIT</label>
+                <input type="text" name="date_from" onfocus="(this.type='date')" placeholder="15.07.2017">
+                <input type="text" name="time_from" onfocus="(this.type='time')" placeholder="12:00">
+              </p>
+
+              <p class="dates till_date clearfix">
+                <label for="date_to">RÜCKGABEZEIT</label>
+                <input type="text" name="date_to" onfocus="(this.type='date')" placeholder="16.07.2017">
+                <input type="text" name="time_to" onfocus="(this.type='time')" placeholder="12:00">
+              </p>
+
+              <p>
+                <input type="submit" name="small-screen" value="PREISE ERMITTELN">
+                <input type="submit" name="large-screen" value="">
+              </p>
+            </fieldset>
+          </form>
+          <ul class="hero__steps">
+            <li>Zustellung und Abholung &#62;</li>
+            <li>Umbuchen & Stornieren &#62;</li>
+            <li>Sixt Kundenlogin &#62;</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- scripts -->
+    <script
+    src="https://code.jquery.com/jquery-1.12.3.min.js"
+    integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
+    crossorigin="anonymous"></script>
+    <!-- <script src="dest/main.min.js" charset="utf-8"></script> -->
+    <script src="dest/slider.min.js" charset="utf-8"></script>
+    <!-- <script src="http://localhost:35729/livereload.js" charset="utf-8"></script> -->
+
+  </body>
+</html>
