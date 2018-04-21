@@ -1,0 +1,77 @@
+
+@media screen and (min-width: 480px)
+	.blog
+		.item
+			display: flex
+			flex-direction: row
+		.news-3,
+		.news-4
+				flex-direction: row-reverse
+@media screen and (min-width: 768px)
+	h6
+		&:after
+			left: calc(50% - 46px)
+
+	header
+		// .navbar-logo a
+		// 	font-size: 18px
+		.menu
+			text-align: left
+			// margin-left: 0
+			// margin-right: 0
+			float: right
+			max-width: 100%
+			&>li
+				float: left
+			&>a
+				float: left
+	.carousel
+		.carousel-caption
+			 right: 60%
+			 left: 10%
+			 padding: 15px
+			 width: 300px
+			 margin: 10px 0 20px
+			 font-size: 18px
+		.carousel-indicators
+	    bottom: 0
+		h4
+			font-size: 34px
+	.special
+		.container
+			padding: 30px 50px
+	.best__features
+		margin-top: 40px
+		.item
+			display: flex
+			align-items: center
+			padding: 10px
+			border-left: 1px solid $orange
+	.quantity
+		.container
+			padding: 30px 50px
+
+@media (min-width: 768px) and (max-width: 992px)
+	header
+		.menu
+			&>li
+				margin: 10px 5px
+			&>a
+				padding: 5px 0
+			.header__button
+				padding: 5px 2px
+				a
+					padding: 5px 2px
+
+@media screen and (min-width: 992px)
+	header
+		.navbar-logo a
+			font-size: 34px
+	footer
+		&>div
+			margin-top: 0
+		.footer__title
+			text-align: left
+		.archives
+			.footer__title
+				text-align: center

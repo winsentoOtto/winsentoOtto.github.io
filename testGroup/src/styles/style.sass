@@ -1,0 +1,454 @@
+@import "fonts"
+@import "constants"
+
+//up to 768px
+header
+	.navbar
+		background-color: $background-grey
+		margin-bottom: 0
+	.icon-bar
+		background-color: #888
+	.navbar-logo
+		padding: 15px 15px
+		font-size: 18px
+		line-height: 20px
+		a
+			color: $orange
+	.menu
+		max-width: 190px
+		text-align: left
+		float: left
+		&>li
+			padding: 0
+			margin: 15px
+			&>a
+				padding: 2px 0
+				color: $text-color
+				transition: all .5s ease
+				&:hover
+					background-color: transparent
+					color: $orange
+		.active
+			border-bottom: 3px solid $orange
+			a
+				color: $orange
+				box-sizing: border-box
+		.header__button
+			margin: 0
+			padding: 10px
+			a
+				border-radius: 4px
+				cursor: pointer
+				padding: 5px 10px
+				text-align: center
+		.enter a
+			border: 1px solid $orange
+			color: $orange
+			transition: all .5s
+			background: transparent
+			&:hover
+				background: $orange
+				color: $background-grey
+		.register a
+			background: $green
+			color: #fff
+			border: 1px solid $green
+			transition: all .5s
+			box-shadow: 0 2px 4px rgba(0,0,0,0.5)
+			&:hover
+				color: #fff
+				box-shadow: none
+				background-color: $green
+
+// carousel
+.carousel
+	.item
+		min-height: 200px
+		background-size: cover
+	.item-1
+		background: url('../../dest/img/football.jpg') center no-repeat
+	.item-2
+		background: url('../../dest/img/football-2.jpg') center no-repeat
+	.item-3
+		background: url('../../dest/img/football-3.jpg') center no-repeat
+	.item-4
+		background: url('../../dest/img/football-4.jpg') center no-repeat
+	.carousel-caption
+		text-align: left
+		right: 0
+		padding: 10px
+		background-color: rgba(0,0,0,0.5)
+		width: 70%
+		margin-bottom: 10px
+		font-size: 16px
+		h4
+			font-size: 20px
+			color: $orange
+			font-weight: 700
+
+	//indicators
+	.carousel-indicators
+		margin-bottom: 0
+		li
+			background-color: #fff
+
+	.carousel-indicators .active
+		width: 10px
+		height: 10px
+		margin: 1px
+		border: 3px solid #fff
+		background-color: $orange
+
+// intro
+.intro
+	.intro__title
+		font-size: 20px
+		display: flex
+		align-items: center
+		&::before
+			display: block
+			margin-right: 10px
+			width: 80px
+			height: 80px
+	.active
+		color: $orange
+	.intro__item
+		margin-top: 20px
+		p
+			color: #b2b2b2
+		.more
+			color: $orange
+			font-size: 14px
+			font-weight: 700
+	.intro__sidebar
+		margin-top: 20px
+		.progress-bar-orange
+			background-color: $orange
+		.progress-bar-black
+			background-color: $text-color
+		p
+			color: $text-color
+			font-weight: 700
+	.progress
+		border-radius: 10px
+		height: 15px
+	.progress-bar
+		border-radius: 10px
+.sport
+	.intro__title
+		&::before
+			content: url('../../dest/img/sport-icon.jpg')
+.casino
+	.intro__title
+		&::before
+			content: url('../../dest/img/casino-icon.jpg')
+.roulette
+	.intro__title
+		&::before
+			content: url('../../dest/img/roulette-icon.jpg')
+.slot
+	.intro__title
+		&::before
+			content: url('../../dest/img/slot-icon.jpg')
+
+//special
+.special
+	border: 1px solid #e5e3e3
+	background-color: $background-grey
+	.container
+		text-align: center
+		padding: 30px 10px
+		overflow: hidden
+	.special__buttons
+		margin: 10px
+		background-color: transparent
+		border: 1px solid #b2b2b2
+		background-size: 202% 100%
+		background-image: linear-gradient(to right, transparent 50%, $orange 50%)
+		transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease
+		&:hover
+			border-color: $orange
+			background-position: -98% 100%
+	.thumbnail__title,
+	.thumbnail
+		transition: all 0.8s
+	.thumbnail
+		padding: 0
+		border-bottom: 3px solid #ddd
+		cursor: pointer
+		max-width: 300px
+		margin-left: auto
+		margin-right: auto
+		overflow: hidden
+		position: relative
+		&:hover
+			border-color: $orange
+			.thumbnail__title
+				color: $orange
+			p,
+			.image::before,
+			.image::after
+				opacity: 1
+		h5
+			font-size: 22px
+		.caption
+			text-align: left
+			p
+				color: #b2b2b2
+	.image
+		width: 290px
+		height: 200px
+		margin-left: auto
+		margin-right: auto
+		-webkit-backface-visibility: hidden
+		background-size: cover
+		width: 100%
+		p
+			opacity: 0
+			transition: .8s
+			text-shadow: 0 1px 1px rgba(0,0,0,0.4)
+			position: relative
+			z-index: 2
+			color: white
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 0
+			top: calc(50% - 20px)
+			text-align: center
+			line-height: 40px
+			display: block
+			width: 80%
+			height: 40px
+			background-color: $orange
+			border-radius: 4px
+			box-shadow: 0 5px 10px rgba(0,0,0,0.5)
+		&:after,
+		&:before
+			opacity: 0
+			transition: .8s
+			content: ""
+			background-color: rgba(255, 102, 0, 0.4)
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 200px
+	.tea__image
+		background-image: url('../../dest/img/tea.jpg')
+	.wood__image
+		background-image: url('../../dest/img/wood.jpg')
+	.clock__image
+		background-image: url('../../dest/img/clock.jpg')
+	.water__image
+		background-image: url('../../dest/img/water.jpg')
+	.subtitle
+		margin-bottom: 15px
+	.special__active
+		background-color: $orange
+		border-color: $orange
+		color: $background-grey
+		&:hover
+			color: $background-grey
+	.slick-next:before
+		content: '\f054'
+		font-family: FontAwesome
+		font-size: 30px
+		color: black
+	.slick-prev:before
+		content: '\f053'
+		font-family: FontAwesome
+		font-size: 30px
+		color: black
+.special__carousel,
+.special__controls
+	margin-top: 50px
+
+//best
+.best
+	figure
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		img
+			border-radius: 100px
+			flex: 0 1 200px
+			align-self: center
+			margin-right: 20px
+		figurecaption
+			flex: 0 1 500px
+			margin-left: 20px
+		p
+			color: #b2b2b2
+			line-height: 2
+.best__title
+	color: $orange
+	font-weight: 700
+	font-size: 20px
+.best__description
+	margin-bottom: 15px
+.best__features
+	margin-top: 40px
+	.item
+		display: flex
+		padding: 20px
+		border-left: none
+		.wrapper
+			display: flex
+			align-items: center
+			margin-left: auto
+			margin-right: auto
+			img
+				margin-right: 5px
+			p
+				margin-bottom: 0
+			.title
+				font-weight: 700
+				color: $text-color
+		&:first-child
+			border-left: none
+
+//quantity
+.quantity
+	border: 1px solid #e5e3e3
+	background-color: #F9F9F9
+	.container
+		padding: 30px 10px
+.quantity__item
+	text-align:  center
+	padding: 10px
+	img
+		margin-bottom: 10px
+	.name
+		text-transform: uppercase
+	.number
+		font-weight: 700
+		font-size: 24px
+	.slot__number
+		color: #2077be
+	.live__number
+		color: #de66ae
+	.sports__number
+		color: #02bbf1
+	.won__number
+		color: #ff6300
+
+// blog
+.blog
+	.item
+		margin-top: 20px
+		display: flex
+		flex-direction: column
+	.item__img
+		flex: 0 1 100%
+		min-width: 160px
+		min-height: 200px
+	.item__content
+		padding: 20px
+		background-color: #F9F9F9
+	.item__title
+		font-weight: 700
+		color: $text-color
+		margin-bottom: 5px
+.news-1
+	.item__img
+		background: url('../../dest/img/news-1.jpg') center no-repeat
+		background-size: cover
+.news-2
+	.item__img
+		background: url('../../dest/img/news-2.jpg') center no-repeat
+		background-size: cover
+.news-3
+	.item__img
+		background: url('../../dest/img/news-3.jpg') center no-repeat
+		background-size: cover
+.news-4
+	.item__img
+		background: url('../../dest/img/news-4.jpg') center no-repeat
+		background-size: cover
+.item__features
+	font-size: 14px
+	display: flex
+	justify-content: space-around
+	i
+		margin-right: 5px
+	.views,
+	.likes
+		border-left: 1px solid #545555
+		padding-left: 4%
+	.likes
+		color: $orange
+
+//form
+.regForm
+	background: url('../../dest/img/form_bg.jpg') center no-repeat
+	background-size: cover
+	.container
+		padding: 50px 10px
+		overflow: hidden
+	form
+		padding-bottom: 15px
+		background-color: $background-white
+		max-width: 400px
+		input
+			display: block
+			margin-bottom: 20px
+			width: 100%
+		input[type=submit]
+			background-color: inherit
+			border: 1px solid $orange
+			background-color: $orange
+			color: $background-grey
+			padding: 10px
+			margin-top: 40px
+			text-transform: uppercase
+		.form-control
+			border-radius: 0
+// footer
+footer
+	padding-top: 40px
+	background-color: #373737
+	color: $background-grey
+	.footer__title
+		color: $background-white
+		text-transform: uppercase
+		text-align: center
+	.footer__content
+		color: #d8d8d8
+		button
+			margin: 5px
+			background-color: transparent
+			border: 1px solid #b2b2b2
+			transition: all 0.8s
+			font-size: 12px
+			&:hover
+				border-color: $orange
+		span
+			font-size: 12px
+			white-space: nowrap
+			display: block
+		.active
+			border-color: $orange
+			color: $orange
+		.media
+			p
+				font-size: 12px
+				overflow: hidden
+				white-space: nowrap
+				text-overflow: ellipsis
+				width: 150px
+		ul
+			padding-left: 15px
+	.aboutUs,
+	.archives,
+	.tags,
+	.recentPosts
+		margin-top: 40px
+	.copyrights
+		padding: 15px 0
+		margin-top: 40px
+		background-color: $text-color
+		color: $background-white
+		span
+			color: $orange
+
+@import "media"
