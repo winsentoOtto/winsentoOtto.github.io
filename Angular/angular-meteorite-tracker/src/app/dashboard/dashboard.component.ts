@@ -8,7 +8,7 @@ import { MeteoriteService } from "../services/meteorite.service";
 })
 export class DashboardComponent implements OnInit {
   public meteoritesList = [];
-  public importantList = [];
+  public importanceList = [];
   onlyFell: boolean = false;
   onlyImportant: boolean = false;
   path: string[] = ["meteorite"];
@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit {
       .getMeteorites()
       .subscribe(data => (this.meteoritesList = this.sortData(data)));
 
-    // this._importanceService.importantList.subscribe(
-    //   importantList => (this.importantList = importantList)
+    // this._importanceService.importanceList.subscribe(
+    //   importanceList => (this.importanceList = importanceList)
     // );
   }
 
@@ -35,11 +35,11 @@ export class DashboardComponent implements OnInit {
   setImportance(meteorite) {
     // console.log("id:", meteorite.id);
     let id = meteorite.id;
-    if (this.importantList.includes(id)) {
-      let indexOfId = this.importantList.indexOf(id);
-      this.importantList.splice(indexOfId, 1);
+    if (this.importanceList.includes(id)) {
+      let indexOfId = this.importanceList.indexOf(id);
+      this.importanceList.splice(indexOfId, 1);
     } else {
-      this.importantList.push(id);
+      this.importanceList.push(id);
     }
 
     return false;
@@ -61,8 +61,8 @@ export class DashboardComponent implements OnInit {
       const sortedData = [];
       data.forEach(meteorite => {
         if (
-          this.importantList.length > 0 &&
-          this.importantList.includes(meteorite.id)
+          this.importanceList.length > 0 &&
+          this.importanceList.includes(meteorite.id)
         ) {
           console.log("meteorite pushed");
           sortedData.push(meteorite);
