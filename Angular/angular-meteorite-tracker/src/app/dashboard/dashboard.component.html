@@ -36,7 +36,7 @@
         <td>{{ meteorite.mass | number:"1.3-3" }}</td>
         <td>{{ meteorite.fall }}</td>
         <td>{{ meteorite.latitude }}, {{ meteorite.longitude }}</td>
-        <td class="clickable" (click)="setImportance(meteorite);">{{ importantList.includes(meteorite.id) ? "yes" :
+        <td class="clickable" (click)="setImportance(meteorite);">{{ importanceList.includes(meteorite.id) ? "yes" :
           "no"
           }}</td>
       </tr>
