@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 export class MeteoriteService {
   private _url: string = "assets/data.json";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getMeteorites(): Observable<Meteorite[]> {
     return this.http.get<Meteorite[]>(this._url);

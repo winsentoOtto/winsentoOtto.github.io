@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MeteoriteService } from "../services/meteorite.service";
+import { FilterService } from "../services/filter.service";
 
 @Component({
   selector: "app-dashboard",
@@ -8,22 +9,33 @@ import { MeteoriteService } from "../services/meteorite.service";
 })
 export class DashboardComponent implements OnInit {
   public meteoritesList = [];
-  public importanceList = [];
-  onlyFell: boolean = false;
-  onlyImportant: boolean = false;
+  public importanceList;
+  onlyFell: boolean;
+  onlyImportant: boolean;
   path: string[] = ["meteorite"];
   order: number = 1;
 
-  constructor(private _meteoriteService: MeteoriteService) {}
+  constructor(
+    private _meteoriteService: MeteoriteService,
+    private _filterService: FilterService
+  ) { }
 
   ngOnInit() {
     this._meteoriteService
       .getMeteorites()
-      .subscribe(data => (this.meteoritesList = this.sortData(data)));
+      .subscribe(data => (this.meteoritesList = data));
 
-    // this._importanceService.importanceList.subscribe(
-    //   importanceList => (this.importanceList = importanceList)
+
+    // this._filterService.onlyFell.subscribe(
+    //   onlyFell => (this.onlyFell = onlyFell)
     // );
+    // this._filterService.onlyImportant.subscribe(
+    //   onlyImportant => (this.onlyImportant = onlyImportant)
+    // );
+
+    this._filterService.importanceList.subscribe(
+      importanceList => (this.importanceList = importanceList)
+    );
   }
 
   sortColumn(prop: string) {
@@ -78,4 +90,5 @@ export class DashboardComponent implements OnInit {
       return data;
     }
   }
+
 }
