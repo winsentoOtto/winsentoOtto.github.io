@@ -2,7 +2,7 @@
   <div class="col-sm-2">
     <div class="input-group">
       <span class="input-group-addon">
-        <input [(ngModel)]="onlyFell" (click)="ngOnInit();" type="checkbox" aria-label="only fell">
+        <input [(ngModel)]="onlyFell" (click)="sortData();" type="checkbox" aria-label="only fell">
       </span>
       <span class="input-group-addon">Only fell</span>
     </div>
@@ -10,7 +10,7 @@
   <div class="col-sm-2">
     <div class="input-group">
       <span class="input-group-addon">
-        <input [(ngModel)]="onlyImportant" (click)="ngOnInit();" type="checkbox" aria-label="only important">
+        <input [(ngModel)]="onlyImportant" (click)="sortData();" type="checkbox" aria-label="only important">
       </span>
       <span class="input-group-addon">Only important</span>
     </div>
