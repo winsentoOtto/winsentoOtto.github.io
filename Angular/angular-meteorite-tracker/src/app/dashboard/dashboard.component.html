@@ -1,6 +1,6 @@
 <div class="container">
-  <app-filter></app-filter>
-  <!-- <div class="row">
+  <!-- <app-filter></app-filter> -->
+  <div class="row">
     <div class="col-sm-2">
       <div class="input-group">
         <span class="input-group-addon">
@@ -17,7 +17,7 @@
         <span class="input-group-addon">Only important</span>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <table class="table table-striped table-bordered">
     <thead>
@@ -37,7 +37,7 @@
         <td>{{ meteorite.mass | number:"1.3-3" }}</td>
         <td>{{ meteorite.fall }}</td>
         <td>{{ meteorite.latitude }}, {{ meteorite.longitude }}</td>
-        <td class="clickable" (click)="setImportance(meteorite);">{{ importantList.includes(meteorite.id) ? "yes" :
+        <td class="clickable" (click)="setImportance(meteorite);">{{ importanceList.includes(meteorite.id) ? "yes" :
           "no"
           }}</td>
       </tr>
