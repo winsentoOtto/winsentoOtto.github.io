@@ -9,8 +9,8 @@ import { MeteoriteService } from "../services/meteorite.service";
 export class DashboardComponent implements OnInit {
   public meteoritesList = [];
   public importanceList = [];
-  onlyFell: boolean;
-  onlyImportant: boolean;
+  onlyFell: boolean = false;
+  onlyImportant: boolean = false;
   path: string[] = ["meteorite"];
   order: number = 1;
 
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this._meteoriteService
       .getMeteorites()
-      .subscribe(data => (this.meteoritesList = this.sortData(data)));
+      .subscribe(data => (this.meteoritesList = data));
 
 
     // this._filterService.onlyFell.subscribe(
@@ -56,38 +56,77 @@ export class DashboardComponent implements OnInit {
     return false;
   };
 
-  sortData(data) {
-    if (this.onlyFell) {
-      const sortedData = [];
-      data.forEach(meteorite => {
-        if (meteorite.fall === "Fell") {
-          sortedData.push(meteorite);
-        } else {
-          return false;
-        }
-      });
-      console.log("result =", sortedData);
-      return sortedData;
-    } else if (this.onlyImportant) {
-      const sortedData = [];
-      data.forEach(meteorite => {
-        if (
-          this.importanceList.length > 0 &&
-          this.importanceList.includes(meteorite.id)
-        ) {
-          console.log("meteorite pushed");
-          sortedData.push(meteorite);
-        } else {
-          // show message that there are no values
-          console.log("no important meteoites");
-          return false;
-        }
-      });
-      console.log("sortedData =", sortedData);
-      return sortedData;
-    } else {
-      return data;
-    }
+  fellTrigger() {
+    this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
+    this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
   };
+
+  importanceTrigger() {
+    this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
+    this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
+  }
+
+  getOnlyFeltMeteorites() {
+    console.log("meteoritesList =", this.meteoritesList);
+
+    const sortedData = [];
+    this.meteoritesList.forEach(meteorite => {
+      meteorite.fall === "Fell" ? sortedData.push(meteorite) : false;
+    })
+    console.log("sortedData =", sortedData);
+
+    return this.meteoritesList = sortedData;
+  };
+
+  getOnlyImportantMeteorites() {
+    const sortedData = [];
+    this.meteoritesList.forEach(meteorite => {
+      if (
+        this.importanceList.length > 0 &&
+        this.importanceList.includes(meteorite.id)
+      ) {
+        sortedData.push(meteorite);
+      } else {
+        // show message that there are no values
+        console.log("no important meteoites");
+        return false;
+      }
+    });
+    return this.meteoritesList = sortedData;
+  };
+
+  // sortData(data) {
+  //   if (this.onlyFell) {
+  //     const sortedData = [];
+  //     data.forEach(meteorite => {
+  //       if (meteorite.fall === "Fell") {
+  //         sortedData.push(meteorite);
+  //       } else {
+  //         return false;
+  //       }
+  //     });
+  //     console.log("result =", sortedData);
+  //     return sortedData;
+  //   } else if (this.onlyImportant) {
+  //     const sortedData = [];
+  //     data.forEach(meteorite => {
+  //       if (
+  //         this.importanceList.length > 0 &&
+  //         this.importanceList.includes(meteorite.id)
+  //       ) {
+  //         console.log("meteorite pushed");
+  //         sortedData.push(meteorite);
+  //       } else {
+  //         // show message that there are no values
+  //         console.log("no important meteoites");
+  //         return false;
+  //       }
+  //     });
+  //     console.log("sortedData =", sortedData);
+  //     return sortedData;
+  //   } else {
+  //     return data;
+  //   }
+  // };
 
 }
