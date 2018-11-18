@@ -23,18 +23,6 @@ export class DashboardComponent implements OnInit {
     this._meteoriteService
       .getMeteorites()
       .subscribe(data => (this.meteoritesList = data));
-
-
-    // this._filterService.onlyFell.subscribe(
-    //   onlyFell => (this.onlyFell = onlyFell)
-    // );
-    // this._filterService.onlyImportant.subscribe(
-    //   onlyImportant => (this.onlyImportant = onlyImportant)
-    // );
-
-    // this._filterService.importanceList.subscribe(
-    //   importanceList => (this.importanceList = importanceList)
-    // );
   }
 
   sortColumn(prop: string) {
@@ -56,7 +44,7 @@ export class DashboardComponent implements OnInit {
     return false;
   };
 
-  onChanged(sortParametr: any) {
+  setFilter(sortParametr: any) {
     if (sortParametr == "") {
       return;
     } else if (sortParametr == "fell") {

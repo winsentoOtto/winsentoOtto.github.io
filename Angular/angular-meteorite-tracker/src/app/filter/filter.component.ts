@@ -15,12 +15,11 @@ export class FilterComponent implements OnInit {
 
   // @Output() onlyImportant = new EventEmitter();
   // @Output() onlyFell = new EventEmitter();
-  @Output() onChanged = new EventEmitter();
+  @Output() setFilter: EventEmitter<any> = new EventEmitter();
 
-  onChange(filter) {
+  onChanged(filter) {
     console.log(filter);
-
-    this.onChanged.emit(filter);
+    this.setFilter.emit(filter);
   }
 
 }
