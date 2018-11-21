@@ -14,16 +14,13 @@ export class DashboardComponent implements OnInit {
   path: string[] = ["meteorite"];
   order: number = 1;
 
-  constructor(
-    private _meteoriteService: MeteoriteService
-    // private _filterService: FilterService
-  ) { }
+  constructor(private _meteoriteService: MeteoriteService) { }
 
   ngOnInit() {
     this._meteoriteService
       .getMeteorites()
       .subscribe(data => (this.meteoritesList = data));
-  }
+  };
 
   sortColumn(prop: string) {
     this.path = prop.split(".");
@@ -52,7 +49,7 @@ export class DashboardComponent implements OnInit {
     } else {
       this.importanceTrigger();
     }
-  }
+  };
 
   fellTrigger() {
     this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
@@ -62,7 +59,7 @@ export class DashboardComponent implements OnInit {
   importanceTrigger() {
     this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
     this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
-  }
+  };
 
   getOnlyFeltMeteorites() {
     console.log("meteoritesList =", this.meteoritesList);
@@ -92,39 +89,5 @@ export class DashboardComponent implements OnInit {
     });
     return this.meteoritesList = sortedData;
   };
-
-  // sortData(data) {
-  //   if (this.onlyFell) {
-  //     const sortedData = [];
-  //     data.forEach(meteorite => {
-  //       if (meteorite.fall === "Fell") {
-  //         sortedData.push(meteorite);
-  //       } else {
-  //         return false;
-  //       }
-  //     });
-  //     console.log("result =", sortedData);
-  //     return sortedData;
-  //   } else if (this.onlyImportant) {
-  //     const sortedData = [];
-  //     data.forEach(meteorite => {
-  //       if (
-  //         this.importanceList.length > 0 &&
-  //         this.importanceList.includes(meteorite.id)
-  //       ) {
-  //         console.log("meteorite pushed");
-  //         sortedData.push(meteorite);
-  //       } else {
-  //         // show message that there are no values
-  //         console.log("no important meteoites");
-  //         return false;
-  //       }
-  //     });
-  //     console.log("sortedData =", sortedData);
-  //     return sortedData;
-  //   } else {
-  //     return data;
-  //   }
-  // };
 
 }
