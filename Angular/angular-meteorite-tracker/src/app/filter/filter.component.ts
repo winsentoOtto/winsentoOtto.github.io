@@ -6,15 +6,11 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./filter.component.css"]
 })
 export class FilterComponent implements OnInit {
-  // onlyImportant: boolean = false;
-  // onlyFell: boolean = false;
 
   constructor() { }
 
   ngOnInit() { }
 
-  // @Output() onlyImportant = new EventEmitter();
-  // @Output() onlyFell = new EventEmitter();
   @Output() setFilter: EventEmitter<any> = new EventEmitter();
 
   onChanged(filter) {

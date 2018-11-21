@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   onlyFell: boolean = false;
   path: string[] = ["meteorite"];
   order: number = 1;
+  data = [];
 
   constructor(private _meteoriteService: MeteoriteService) { }
 
@@ -53,12 +54,12 @@ export class DashboardComponent implements OnInit {
 
   fellTrigger() {
     this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
-    this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
+    this.onlyFell ? this.getOnlyFeltMeteorites() : this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
   };
 
   importanceTrigger() {
     this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
-    this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
+    this.onlyImportant ? this.getOnlyImportantMeteorites() : this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
   };
 
   getOnlyFeltMeteorites() {
@@ -81,7 +82,7 @@ export class DashboardComponent implements OnInit {
         this.importanceList.includes(meteorite.id)
       ) {
         sortedData.push(meteorite);
-      } else {
+      } else if (this.importanceList.length == 0) {
         // show message that there are no values
         console.log("no important meteoites");
         return false;
