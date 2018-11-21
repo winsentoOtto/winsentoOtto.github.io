@@ -9,8 +9,8 @@ import { MeteoriteService } from "../services/meteorite.service";
 export class DashboardComponent implements OnInit {
   public meteoritesList = [];
   public importanceList = [];
-  // onlyImportant: boolean;
-  // onlyFell: boolean;
+  onlyImportant: boolean = false;
+  onlyFell: boolean = false;
   path: string[] = ["meteorite"];
   order: number = 1;
 
@@ -48,25 +48,20 @@ export class DashboardComponent implements OnInit {
     if (sortParametr == "") {
       return;
     } else if (sortParametr == "fell") {
-      this.fellTrigger(true);
+      this.fellTrigger();
     } else {
-      this.importanceTrigger(true);
+      this.importanceTrigger();
     }
   }
 
-  fellTrigger(onlyFell) {
-    // this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
-    console.log("fellTrigger called");
-    console.log("this.onlyFell =", onlyFell);
-
-
-    onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
+  fellTrigger() {
+    this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
+    this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
   };
 
-  importanceTrigger(onlyImportant) {
-    // this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
-    console.log("importanceTrigger called");
-    onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
+  importanceTrigger() {
+    this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
+    this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
   }
 
   getOnlyFeltMeteorites() {
