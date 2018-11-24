@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   path: string[] = ["meteorite"];
   order: number = 1;
   data = [];
+  error: boolean = false;
 
   constructor(private _meteoriteService: MeteoriteService) { }
 
@@ -43,6 +44,7 @@ export class DashboardComponent implements OnInit {
   };
 
   setFilter(sortParametr: any) {
+    this.hideError();
     if (sortParametr == "") {
       return;
     } else if (sortParametr == "fell") {
@@ -63,18 +65,20 @@ export class DashboardComponent implements OnInit {
   };
 
   getOnlyFeltMeteorites() {
-    console.log("meteoritesList =", this.meteoritesList);
+    this.hideError();
+    // console.log("meteoritesList =", this.meteoritesList);
 
     const sortedData = [];
     this.meteoritesList.forEach(meteorite => {
       meteorite.fall === "Fell" ? sortedData.push(meteorite) : false;
     })
-    console.log("sortedData =", sortedData);
+    // console.log("sortedData =", sortedData);
 
     return this.meteoritesList = sortedData;
   };
 
   getOnlyImportantMeteorites() {
+    this.hideError();
     const sortedData = [];
     this.meteoritesList.forEach(meteorite => {
       if (
@@ -84,11 +88,23 @@ export class DashboardComponent implements OnInit {
         sortedData.push(meteorite);
       } else if (this.importanceList.length == 0) {
         // show message that there are no values
-        console.log("no important meteoites");
+        this.showError();
         return false;
       }
     });
     return this.meteoritesList = sortedData;
   };
+
+  showError() {
+    this.error = true;
+  }
+
+  hideError() {
+    if (this.error === true) {
+      this.error = false;
+    } else {
+      return;
+    }
+  }
 
 }
