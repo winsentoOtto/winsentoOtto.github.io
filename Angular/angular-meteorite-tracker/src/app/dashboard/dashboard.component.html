@@ -3,6 +3,7 @@
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
+        <th>#</th>
         <th class="clickable" (click)="sortColumn('date');">Date</th>
         <th class="clickable" (click)="sortColumn('name');">Name</th>
         <th class="clickable" (click)="sortColumn('mass');">Mass[g]</th>
@@ -12,7 +13,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let meteorite of meteoritesList | sortingMeteorites:path:order">
+      <tr *ngFor="let meteorite of meteoritesList | sortingMeteorites:path:order; let i = index">
+        <td>{{ i+1 }}</td>
         <td>{{ meteorite.date | date:"dd.MM.yyyy" }}</td>
         <td>{{ meteorite.name }}</td>
         <td>{{ meteorite.mass | number:"1.3-3" }}</td>
@@ -28,7 +30,7 @@
     Nothing found
   </div>
   <nav aria-label="page navigation">
-    <ul class="pagination">
+    <!-- <ul class="pagination">
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
@@ -43,6 +45,24 @@
           <span aria-hidden="true">&raquo;</span>
           <span class="sr-only">Next</span>
         </a>
+      </li>
+    </ul> -->
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
       </li>
     </ul>
   </nav>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MeteoriteService } from "../services/meteorite.service";
+import { PagerService } from '../services/pager.service';
 
 @Component({
   selector: "app-dashboard",
@@ -16,12 +17,22 @@ export class DashboardComponent implements OnInit {
   data = [];
   error: boolean = false;
 
-  constructor(private _meteoriteService: MeteoriteService) { }
+  // pager object
+  pager: any = {};
+  // paged items
+  pagedItems: any[];
+
+  constructor(
+    private _meteoriteService: MeteoriteService,
+    private _pagerService: PagerService) { }
 
   ngOnInit() {
     this._meteoriteService
       .getMeteorites()
       .subscribe(data => (this.meteoritesList = data));
+
+    // initialize to page 1
+    this.setPage(1);
   };
 
   sortColumn(prop: string) {
@@ -97,7 +108,7 @@ export class DashboardComponent implements OnInit {
 
   showError() {
     this.error = true;
-  }
+  };
 
   hideError() {
     if (this.error === true) {
@@ -105,6 +116,16 @@ export class DashboardComponent implements OnInit {
     } else {
       return;
     }
-  }
+  };
+
+  setPage(page: number) {
+    // get pager object from service
+    this.pager = this._pagerService.getPager(this.meteoritesList.length, page);
+    console.log("meteoritesList=", this.meteoritesList);
+    console.log("pager=", this.pager);
+
+    // get current page of items
+    this.pagedItems = this.meteoritesList.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  };
 
 }
