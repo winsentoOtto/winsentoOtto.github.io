@@ -29,10 +29,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this._meteoriteService
       .getMeteorites()
-      .subscribe(data => (this.meteoritesList = data));
+      .subscribe(data => {
+        this.meteoritesList = data;
 
-    // initialize to page 1
-    this.setPage(1);
+        // initialize to page 1
+        this.setPage(1);
+      });
+
   };
 
   sortColumn(prop: string) {
