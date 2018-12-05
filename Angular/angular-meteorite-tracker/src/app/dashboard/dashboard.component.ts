@@ -41,6 +41,7 @@ export class DashboardComponent implements OnInit {
   sortColumn(prop: string) {
     this.path = prop.split(".");
     this.order = this.order * -1;
+    this.setPage(1);
     return false; // do not reload
   };
 
@@ -71,11 +72,13 @@ export class DashboardComponent implements OnInit {
   fellTrigger() {
     this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
     this.onlyFell ? this.getOnlyFeltMeteorites() : this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
+    this.setPage(1);
   };
 
   importanceTrigger() {
     this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
     this.onlyImportant ? this.getOnlyImportantMeteorites() : this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
+    this.setPage(1);
   };
 
   getOnlyFeltMeteorites() {
