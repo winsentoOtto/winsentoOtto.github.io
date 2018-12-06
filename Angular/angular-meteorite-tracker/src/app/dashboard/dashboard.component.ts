@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MeteoriteService } from "../services/meteorite.service";
+import { Meteorite } from "../interfaces/meteorites";
 import { PagerService } from '../services/pager.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { PagerService } from '../services/pager.service';
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  public meteoritesList = [];
+  public meteoritesList: Meteorite[] = [];
   public importanceList = [];
   onlyImportant: boolean = false;
   onlyFell: boolean = false;
@@ -24,7 +25,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private _meteoriteService: MeteoriteService,
-    private _pagerService: PagerService) { }
+    private _pagerService: PagerService
+  ) { }
 
   ngOnInit() {
     this._meteoriteService

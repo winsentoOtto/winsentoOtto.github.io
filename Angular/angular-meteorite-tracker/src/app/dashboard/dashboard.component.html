@@ -9,6 +9,7 @@
         <th>Fell</th>
         <th>Location</th>
         <th>Important</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td class="clickable" (click)="setImportance(meteorite);">{{ importanceList.includes(meteorite.id) ? "yes" :
           "no"
           }}</td>
+        <td><a routerLink="/details/{{meteorite.id}}">show</a></td>
       </tr>
     </tbody>
   </table>

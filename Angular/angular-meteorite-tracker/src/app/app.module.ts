@@ -7,10 +7,12 @@ import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { SortingMeteoritesPipe } from "./pipes/sorting-meteorites.pipe";
 import { FilterComponent } from './filter/filter.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { MeteoriteDetailComponent } from './meteorite-detail/meteorite-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, SortingMeteoritesPipe, FilterComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  declarations: [AppComponent, DashboardComponent, SortingMeteoritesPipe, FilterComponent, MeteoriteDetailComponent],
+  imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -5,4 +5,5 @@ export interface Meteorite {
   latitude: number;
   longitude: number;
   date: Date;
+  id: any;
 }
