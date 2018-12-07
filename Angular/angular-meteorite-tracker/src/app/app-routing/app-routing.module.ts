@@ -7,7 +7,7 @@ import { MeteoriteDetailComponent } from '../meteorite-detail/meteorite-detail.c
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "dashboard", component: DashboardComponent },
-  { path: "detail/:id", component: MeteoriteDetailComponent }
+  { path: "details/:id", component: MeteoriteDetailComponent }
 ]
 
 @NgModule({

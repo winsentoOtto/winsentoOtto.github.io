@@ -7,6 +7,7 @@ import { Observable, of } from "rxjs";
   providedIn: "root"
 })
 export class MeteoriteService {
+
   private _url: string = "assets/data.json";
 
   constructor(private http: HttpClient) { }
@@ -16,7 +17,9 @@ export class MeteoriteService {
   }
 
   getMeteoriteById(id: any): Observable<Meteorite> {
-    return of(JSON.parse(this._url).find(meteorite => meteorite.id === id));
+    console.log("data =", this._url);
+
+    return of(.find(meteorite => meteorite.id === id));
   }
 
 }

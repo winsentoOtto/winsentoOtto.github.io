@@ -9,20 +9,18 @@
         <th>Fell</th>
         <th>Location</th>
         <th>Important</th>
-        <th>Details</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let meteorite of pagedItems | sortingMeteorites:path:order">
         <td>{{ meteorite.date | date:"dd.MM.yyyy" }}</td>
-        <td>{{ meteorite.name }}</td>
+        <td><a routerLink="/details/{{meteorite.id}}">{{ meteorite.name }}</a></td>
         <td>{{ meteorite.mass | number:"1.3-3" }}</td>
         <td>{{ meteorite.fall }}</td>
         <td>{{ meteorite.latitude }}, {{ meteorite.longitude }}</td>
         <td class="clickable" (click)="setImportance(meteorite);">{{ importanceList.includes(meteorite.id) ? "yes" :
           "no"
           }}</td>
-        <td><a routerLink="/details/{{meteorite.id}}">show</a></td>
       </tr>
     </tbody>
   </table>

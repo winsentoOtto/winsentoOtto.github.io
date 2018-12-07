@@ -129,8 +129,8 @@ export class DashboardComponent implements OnInit {
   setPage(page: number) {
     // get pager object from service
     this.pager = this._pagerService.getPager(this.meteoritesList.length, page);
-    console.log("meteoritesList=", this.meteoritesList);
-    console.log("pager=", this.pager);
+    // console.log("meteoritesList=", this.meteoritesList);
+    // console.log("pager=", this.pager);
 
     // get current page of items
     this.pagedItems = this.meteoritesList.slice(this.pager.startIndex, this.pager.endIndex + 1);

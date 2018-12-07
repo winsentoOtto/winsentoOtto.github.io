@@ -27,6 +27,7 @@ export class MeteoriteDetailComponent implements OnInit {
   getMeteorite() {
     const id = this.route.snapshot.paramMap.get("id");
     this._meteoriteService.getMeteoriteById(id).subscribe(meteorite => (this.meteorite = meteorite));
+    console.log("meteorite =", this.meteorite);
   }
 
   goBack() {
