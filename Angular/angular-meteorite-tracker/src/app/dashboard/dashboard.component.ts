@@ -48,7 +48,6 @@ export class DashboardComponent implements OnInit {
   };
 
   setImportance(meteorite) {
-    // console.log("id:", meteorite.id);
     let id = meteorite.id;
     if (this.importanceList.includes(id)) {
       let indexOfId = this.importanceList.indexOf(id);
@@ -85,13 +84,11 @@ export class DashboardComponent implements OnInit {
 
   getOnlyFeltMeteorites() {
     this.hideError();
-    // console.log("meteoritesList =", this.meteoritesList);
 
     const sortedData = [];
     this.meteoritesList.forEach(meteorite => {
       meteorite.fall === "Fell" ? sortedData.push(meteorite) : false;
     })
-    // console.log("sortedData =", sortedData);
 
     return this.meteoritesList = sortedData;
   };
@@ -129,8 +126,6 @@ export class DashboardComponent implements OnInit {
   setPage(page: number) {
     // get pager object from service
     this.pager = this._pagerService.getPager(this.meteoritesList.length, page);
-    // console.log("meteoritesList=", this.meteoritesList);
-    // console.log("pager=", this.pager);
 
     // get current page of items
     this.pagedItems = this.meteoritesList.slice(this.pager.startIndex, this.pager.endIndex + 1);

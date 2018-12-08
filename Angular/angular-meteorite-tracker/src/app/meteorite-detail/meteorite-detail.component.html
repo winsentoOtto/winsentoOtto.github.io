@@ -1,13 +1,13 @@
-<p>
-  meteorite-detail works!
-</p>
 <div *ngIf="meteorite">
-  <h2>{{meteorite.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{meteorite.id}}</div>
+  <h4>Details for</h4>
+  <h2>{{meteorite.name | uppercase}}</h2>
   <div>
-    <label>name:
-      <input [(ngModel)]="meteorite.name" placeholder="name" />
-    </label>
+    <p><span>id:</span> {{meteorite.id}}</p>
+    <p><span>name:</span> {{meteorite.name}}</p>
+    <p><span>mass:</span> {{meteorite.mass | number:"1.3-3"}} g</p>
+    <p><span>date:</span> {{ meteorite.date | date:"dd.MM.yyyy" }}</p>
+    <p><span>{{ meteorite.fall }}:</span> {{ meteorite.latitude }}, {{ meteorite.longitude }}</p>
   </div>
+
   <button (click)="goBack()">go back</button>
 </div>

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Meteorite } from "../interfaces/meteorites";
 import { Observable, of } from "rxjs";
+import { METEORITES } from "../mock-meteorite";
 
 @Injectable({
   providedIn: "root"
@@ -16,10 +17,8 @@ export class MeteoriteService {
     return this.http.get<Meteorite[]>(this._url);
   }
 
-  getMeteoriteById(id: any): Observable<Meteorite> {
-    console.log("data =", this._url);
-
-    return of(.find(meteorite => meteorite.id === id));
+  getMeteoriteById(id: any): Observable<Meteorite[]> {
+    return of(METEORITES.find(meteorite => meteorite.id === id));
   }
 
 }

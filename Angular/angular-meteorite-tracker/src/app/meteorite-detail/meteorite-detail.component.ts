@@ -13,6 +13,7 @@ import { MeteoriteService } from '../services/meteorite.service';
 })
 export class MeteoriteDetailComponent implements OnInit {
   meteorite: Meteorite;
+  public meteoritesList: Meteorite[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,13 +22,19 @@ export class MeteoriteDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this._meteoriteService
+      .getMeteorites()
+      .subscribe(data => {
+        this.meteoritesList = data;
+      });
+
     this.getMeteorite();
   }
 
   getMeteorite() {
     const id = this.route.snapshot.paramMap.get("id");
-    this._meteoriteService.getMeteoriteById(id).subscribe(meteorite => (this.meteorite = meteorite));
-    console.log("meteorite =", this.meteorite);
+    const list = this.meteoritesList;
+    this._meteoriteService.getMeteoriteById(id).subscribe(meteoriteById => (this.meteorite = meteoriteById));
   }
 
   goBack() {
