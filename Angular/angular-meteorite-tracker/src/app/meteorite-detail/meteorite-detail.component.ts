@@ -22,19 +22,20 @@ export class MeteoriteDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this._meteoriteService
       .getMeteorites()
       .subscribe(data => {
         this.meteoritesList = data;
+        this.getMeteorite();
       });
 
-    this.getMeteorite();
   }
 
   getMeteorite() {
     const id = this.route.snapshot.paramMap.get("id");
     const list = this.meteoritesList;
-    this._meteoriteService.getMeteoriteById(id).subscribe(meteoriteById => (this.meteorite = meteoriteById));
+    this.meteorite = list.find(meteorite => meteorite.id === id);
   }
 
   goBack() {
