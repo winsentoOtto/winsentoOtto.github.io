@@ -55,7 +55,6 @@ export class DashboardComponent implements OnInit {
     } else {
       this.importanceList.push(id);
     }
-
     return false;
   };
 
@@ -84,7 +83,6 @@ export class DashboardComponent implements OnInit {
 
   getOnlyFeltMeteorites() {
     this.hideError();
-
     const sortedData = [];
     this.meteoritesList.forEach(meteorite => {
       meteorite.fall === "Fell" ? sortedData.push(meteorite) : false;

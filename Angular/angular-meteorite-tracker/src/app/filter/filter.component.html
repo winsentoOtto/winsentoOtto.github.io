@@ -1,18 +1,18 @@
 <div class="row">
-  <div class="col-sm-2">
-    <div class="input-group">
-      <span class="input-group-addon">
+  <div class="input-group col-md-3 col-sm-12">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
         <input (click)="onChanged('fell');" type="checkbox" aria-label="only fell">
-      </span>
-      <span class="input-group-addon">Only fell</span>
+      </div>
+      <input type="text" class="form-control" value="Only fell" readonly />
     </div>
   </div>
-  <div class="col-sm-2">
-    <div class="input-group">
-      <span class="input-group-addon">
+  <div class="input-group col-md-3 col-sm-12">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
         <input (click)="onChanged('importance');" type="checkbox" aria-label="only important">
-      </span>
-      <span class="input-group-addon">Only important</span>
+      </div>
+      <input type="text" class="form-control" value="Only important" readonly />
     </div>
   </div>
 </div>
