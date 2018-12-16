@@ -9,7 +9,12 @@ import { PagerService } from '../services/pager.service';
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
+  // pure meteorites data
+  public pureData: Meteorite[] = [];
+
+  // meteorites data that changes depend on filter
   public meteoritesList: Meteorite[] = [];
+
   public importanceList = [];
   onlyImportant: boolean = false;
   onlyFell: boolean = false;
@@ -33,6 +38,7 @@ export class DashboardComponent implements OnInit {
       .getMeteorites()
       .subscribe(data => {
         this.meteoritesList = data;
+        this.pureData = data;
 
         // initialize to page 1
         this.setPage(1);
@@ -71,30 +77,38 @@ export class DashboardComponent implements OnInit {
 
   fellTrigger() {
     this.onlyFell ? this.onlyFell = false : this.onlyFell = true;
-    this.onlyFell ? this.getOnlyFeltMeteorites() : this.onlyImportant ? this.getOnlyImportantMeteorites() : this.ngOnInit();
+    if (!!this.onlyFell) {
+      this.getOnlyFeltMeteorites(this.meteoritesList);
+    } else {
+      this.onlyImportant ? this.getOnlyImportantMeteorites(this.pureData) : this.ngOnInit();
+    };
     this.setPage(1);
   };
 
   importanceTrigger() {
     this.onlyImportant ? this.onlyImportant = false : this.onlyImportant = true;
-    this.onlyImportant ? this.getOnlyImportantMeteorites() : this.onlyFell ? this.getOnlyFeltMeteorites() : this.ngOnInit();
+    if (!!this.onlyImportant) {
+      this.getOnlyImportantMeteorites(this.meteoritesList);
+    } else {
+      this.onlyFell ? this.getOnlyFeltMeteorites(this.pureData) : this.ngOnInit();
+    };
     this.setPage(1);
   };
 
-  getOnlyFeltMeteorites() {
+  getOnlyFeltMeteorites(data) {
     this.hideError();
     const sortedData = [];
-    this.meteoritesList.forEach(meteorite => {
+    data.forEach(meteorite => {
       meteorite.fall === "Fell" ? sortedData.push(meteorite) : false;
     })
 
     return this.meteoritesList = sortedData;
   };
 
-  getOnlyImportantMeteorites() {
+  getOnlyImportantMeteorites(data) {
     this.hideError();
     const sortedData = [];
-    this.meteoritesList.forEach(meteorite => {
+    data.forEach(meteorite => {
       if (
         this.importanceList.length > 0 &&
         this.importanceList.includes(meteorite.id)
