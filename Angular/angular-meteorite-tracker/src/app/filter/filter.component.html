@@ -1,18 +1,14 @@
 <div class="row">
-  <div class="input-group col-md-3 col-sm-12">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input (click)="onChanged('fell');" type="checkbox" aria-label="only fell">
-      </div>
-      <input type="text" class="form-control" value="Only fell" readonly />
+  <div class="filter input-group col-md-3 col-sm-12">
+    <div class="form-check form-check-inline">
+      <input (click)="onChanged('fell');" class="form-check-input" type="checkbox" id="fell">
+      <label class="form-check-label" for="fell">Only fell</label>
     </div>
   </div>
-  <div class="input-group col-md-3 col-sm-12">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input (click)="onChanged('importance');" type="checkbox" aria-label="only important">
-      </div>
-      <input type="text" class="form-control" value="Only important" readonly />
+  <div class="filter input-group col-md-3 col-sm-12">
+    <div class="form-check form-check-inline">
+      <input (click)="onChanged('importance');" class="form-check-input" type="checkbox" id="important">
+      <label class="form-check-label" for="important">Only important</label>
     </div>
   </div>
 </div>

@@ -1,0 +1,7 @@
+.filter .form-control{
+  border: none;
+}
+
+label{
+  cursor: pointer;
+}

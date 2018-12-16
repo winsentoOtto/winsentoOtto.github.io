@@ -1,13 +1,15 @@
 <div class="container" *ngIf="meteorite">
-  <h4>Details for</h4>
-  <h2>{{meteorite.name | uppercase}}</h2>
-  <div>
-    <p><span>id:</span> {{meteorite.id}}</p>
-    <p><span>name:</span> {{meteorite.name}}</p>
-    <p><span>mass:</span> {{meteorite.mass | number:"1.3-3"}} g</p>
-    <p><span>date:</span> {{ meteorite.date | date:"dd.MM.yyyy" }}</p>
-    <p><span>{{ meteorite.fall }}:</span> {{ meteorite.latitude }}, {{ meteorite.longitude }}</p>
+  <h4><span>Details for</span> {{meteorite.name | uppercase}}</h4>
+  <div class="form-group">
+    <ul class="list-group info-content">
+      <li class="list-group-item list-group-item-action"><span>id:</span> {{meteorite.id}}</li>
+      <li class="list-group-item list-group-item-action"><span>name:</span> {{meteorite.name}}</li>
+      <li class="list-group-item list-group-item-action"><span>mass:</span> {{meteorite.mass | number:"1.3-3"}} g</li>
+      <li class="list-group-item list-group-item-action"><span>date:</span> {{ meteorite.date | date:"dd.MM.yyyy" }}</li>
+      <li class="list-group-item list-group-item-action"><span>{{ meteorite.fall | lowercase }}:</span> {{
+        meteorite.latitude }},
+        {{ meteorite.longitude }}</li>
+    </ul>
   </div>
-
-  <button (click)="goBack()">go back</button>
+  <button (click)="goBack()" class="btn btn-primary">go back</button>
 </div>
